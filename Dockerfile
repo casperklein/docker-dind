@@ -1,4 +1,4 @@
-FROM	docker:dind
+FROM	docker:dind as build
 
 ARG	PACKAGES="socat"
 
@@ -9,6 +9,11 @@ RUN	apk upgrade --no-cache \
 # Copy root filesystem
 COPY	rootfs /
 
+# get rid of: VOLUME /var/lib/docker
+FROM scratch
+
+COPY    --from=build / /
+
 ENTRYPOINT ["/bin/sh", "run.sh"]
 
-
+EXPOSE	2375
