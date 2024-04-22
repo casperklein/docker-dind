@@ -6,4 +6,4 @@ until [ -S /var/run/docker.sock ]; do
 done
 
 echo "INFO: Docker daemon started."
-socat -d -d TCP-LISTEN:2375,fork UNIX-CONNECT:/var/run/docker.sock
+socat -d TCP-LISTEN:2375,fork UNIX-CONNECT:/var/run/docker.sock
