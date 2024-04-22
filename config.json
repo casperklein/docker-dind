@@ -1,0 +1,6 @@
+{
+  "user": "casperklein",
+  "name": "docker-dind",
+  "image": "casperklein/dind",
+  "version": "0.1"
+}
