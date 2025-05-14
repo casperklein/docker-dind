@@ -1,4 +1,4 @@
-FROM	docker:dind as build
+FROM	docker:dind AS build
 
 ARG	PACKAGES="socat"
 
